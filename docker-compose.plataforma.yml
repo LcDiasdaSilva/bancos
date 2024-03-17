@@ -1,14 +1,17 @@
-version: '3.8'
+version: '3.1'
 
 services:
-  mysql_plataforma_db:
-    image: mysql
-    ports:
-      - '3308:3306'
+  db:
+    image: mysql:latest
+    restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=@Microtik350
-      - MYSQL_DATABASE=plataforma
-      - MYSQL_USER=lcdias
-      - MYSQL_PASSWORD=@Microtik350
-      - MYSQL_TCP_PORT=3306
+      MYSQL_ROOT_PASSWORD: M@i$#100%
+      MYSQL_DATABASE: plataforma
+      MYSQL_USER: lcdias
+      MYSQL_PASSWORD: M@i$#100%
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data:/var/lib/mysql
+
     
